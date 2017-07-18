@@ -50,17 +50,20 @@ app.run(function($rootScope, $location, UserService, $cookieStore) {
 		//console.log($rootScope.currentUser.username)
 
 	$rootScope.logout = function() {
+		console.log("app.run(--log out called**  ");
+		delete $rootScope.currentUser;
+		$cookieStore.remove('currentUser');
 		UserService.logout().then(function(response) {
-			$rootScope.currentUser.firstname=null
-			$rootScope.currentUser.role=null
-			$rootScope.message = "loggedout successfully..."
-			delete $rootScope
-			$cookieStore.remove("currentUser")
+			//$rootScope.currentUser.firstname=null;
+			//$rootScope.currentUser.role=null
+			$rootScope.message = "logged out successfully..."
+			//delete $rootScope
+			//$cookieStore.remove("currentUser")
 			$location.path('/login')
 		}, function(response) {
 			console.log(response.status)
 			$rootScope.message = response.data.message
-			$location.path('/login')
+			//$location.path('/login')
 
 		})
 	}

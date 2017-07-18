@@ -10,7 +10,7 @@ app.factory('JobService', function($http) {
 	jobService.getAllJobs=function(){
 		return $http.get("http://localhost:8480/Collabs_Back/getalljobs")
 	}
-	jobService.getJobById=function(){
+	jobService.getJobById=function(id){
 		return $http.get("http://localhost:8480/Collabs_Back/getjobbyid/" +id)
 	}
 	return jobService
