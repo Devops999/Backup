@@ -28,6 +28,7 @@ app.controller('BlogPostController', function($scope,BlogPostService,$location) 
 		
 $scope.blogsApproved=BlogPostService.blogsApproved().then(function(response){
 	$scope.blogsApproved=response.data;
+	console.log(response.data)
 	
 },function(response){
 	console.log(response.status)
@@ -36,6 +37,7 @@ $scope.blogsApproved=BlogPostService.blogsApproved().then(function(response){
 
 $scope.blogsWaitingForApproval=BlogPostService.blogsWaitingForApproval().then(function(response){
 	$scope.blogsWaitingForApproval=response.data;
+console.log(response.data)
 },function(response){
 	console.log(response.status)
 

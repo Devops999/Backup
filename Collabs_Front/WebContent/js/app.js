@@ -38,6 +38,28 @@ app.config(function($routeProvider) {
 		templateUrl:'views/blogdetail.html',
 		controller:'BlogDetailController'
 	})
+	
+	/*adding friend module*/
+	.when('/suggestedusers',{
+		templateUrl:'views/suggestedusers.html',
+		controller:'FriendController'
+	})
+	
+	.when('/pendingrequests',{
+		templateUrl:'views/friendlist.html',
+	    controller:'FriendController'
+	})
+	
+	.when('/wall/:username',{
+		templateUrl:'views/wall.html',
+		controller:'WallController'
+	})
+	
+	.when('/profilepic',{
+		templateUrl:'views/profilepic.html'
+	})
+	
+	
 	.otherwise('/',{
 		templateUrl : 'views/home.html'
 	})
